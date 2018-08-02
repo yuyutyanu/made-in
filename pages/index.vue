@@ -41,7 +41,7 @@
 
         <div class="gallery">
           <div class="gallery-work" v-for="n in 9" :key="n">
-            <img src="https://dummyimage.com/350x250/dedede/fff" alt="">
+            <img src="https://dummyimage.com/350x250/fff/000" alt="">
             <div class="gallery-work-name">
               <p>Dummy</p>
             </div>
@@ -199,6 +199,7 @@
   .gallery-work{
     margin-bottom:30px;
     position: relative;
+    border:solid 1px #000;
   }
   .gallery-work-name{
     position: absolute;
