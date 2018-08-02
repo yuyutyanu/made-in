@@ -20,7 +20,7 @@
           </div>
           <div class="menu-side-category">
             <ul>
-              <li v-for="n in 5" :key="n">ホワイト系</li>
+              <li v-for="n in 5" :key="n">ホワイト系（９３２）</li>
             </ul>
           </div>
 
