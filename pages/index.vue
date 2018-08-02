@@ -4,8 +4,25 @@
       <div class="container">
         <div class="menu-head">
           <img src="/logo-white.svg" alt="">
+            <ul class="menu-head-lists">
+              <li>line up</li>
+              <li>about</li>
+              <li></li>
+              <li><img src="/twitter.svg" alt=""></li>
+            </ul>
         </div>
         <div class="menu-side">
+          <p class="menu-side-title">category</p>
+          <div class="menu-side-category">
+            <ul>
+              <li v-for="n in 5" :key="n">インテリア・雑貨（２３３）</li>
+            </ul>
+          </div>
+          <div class="menu-side-category">
+            <ul>
+              <li v-for="n in 5" :key="n">ホワイト系</li>
+            </ul>
+          </div>
 
         </div>
         <div class="menu-btn" @click="open">
@@ -24,7 +41,10 @@
 
         <div class="gallery">
           <div class="gallery-work" v-for="n in 9" :key="n">
-            <img src="https://dummyimage.com/350x250/000000/fff" alt="">
+            <img src="https://dummyimage.com/350x250/dedede/fff" alt="">
+            <div class="gallery-work-name">
+              <p>Dummy</p>
+            </div>
           </div>
         </div>
       </div>
@@ -57,7 +77,63 @@
   .menu {
     width: 100%;
     height: 100vh;
-    background-color: #000;
+    background-color: #1E1E1E;
+  }
+
+  .menu-head-lists{
+    display: flex;
+    position: absolute;
+    right:300px;
+    top:110px;
+  }
+  .menu-head-lists li{
+    color:#fff;
+    list-style: none;
+    margin-right:20px;
+    font-weight:bold;
+    font-size:24px;
+  }
+  .menu-head-lists li:hover{
+    border-bottom:solid 1px #fff;
+  }
+  .menu-head-lists li:nth-child(3){
+    height:30px;
+    width:1px;
+    background:#fff;
+    border-bottom:none;
+  }
+
+  .menu-side {
+    position: absolute;
+    top:180px;
+    right:60px;
+  }
+  .menu-side-title{
+    color:#fff;
+    font-weight:bold;
+    font-size:24px;
+    margin-bottom:20px;
+  }
+  .menu-side-category{
+    color:#fff;
+    font-size:14px;
+    margin-left:20px;
+    line-height: 2em;
+    border-bottom:solid 1px #fff;
+    padding-bottom:20px;
+    margin-bottom:20px;
+  }
+  .menu-side-category ul {
+    padding:0;
+  }
+  .menu-side-category ul li{
+    list-style: none;
+  }
+  .menu-side-category ul li:hover{
+    border-bottom:solid 1px #fff;
+  }
+  .menu-side-category:last-child{
+    border:none;
   }
 
   .menu-btn {
@@ -97,7 +173,7 @@
 
   .is-menu-open .main {
     position: fixed;
-    transform: translate3d(-250px, 150px, 0);
+    transform: translate3d(-300px, 160px, 0);
     transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), box-shadow 0.3s ease-out 0.4s, -webkit-transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
@@ -113,6 +189,18 @@
   }
   .gallery-work{
     margin-bottom:30px;
+    position: relative;
+  }
+  .gallery-work-name{
+    position: absolute;
+    bottom:0;
+    background: #000;
+    width:100%;
+  }
+  .gallery-work-name p{
+    font-size:16px;
+    padding:10px 15px;
+    color:#fff;
   }
 
 </style>
