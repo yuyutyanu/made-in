@@ -6,7 +6,7 @@
           <img src="/logo-white.svg" alt="">
             <ul class="menu-head-lists">
               <li>line up</li>
-              <li>about</li>
+              <li @click="toAbout">about</li>
               <li></li>
               <li><img src="/twitter.svg" alt=""></li>
             </ul>
@@ -25,7 +25,7 @@
           </div>
 
         </div>
-        <div class="menu-btn" @click="open">
+        <div class="menu-btn" @click="toggleScreen">
           <span class="menu-border"></span>
           <span class="menu-border"></span>
           <span class="menu-border"></span>
@@ -55,14 +55,20 @@
 <script>
 
   export default {
+    transition:'fade',
     data(){
       return {
         isOpen: false
       }
     },
     methods: {
-      open(){
+      toggleScreen(){
         this.isOpen = !this.isOpen
+      },
+      toAbout(){
+        this.toggleScreen()
+        const _me = this
+        setTimeout(function(){_me.$router.push('/about')},250)
       }
     }
   }
@@ -72,6 +78,9 @@
 
   .container {
     padding: 30px 35px;
+  }
+  a{
+    text-decoration: none;
   }
 
   .menu {
